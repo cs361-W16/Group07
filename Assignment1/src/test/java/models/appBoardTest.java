@@ -55,4 +55,15 @@ public class appBoardTest extends NinjaDocTester{
         newBoard.removeStack(0);
         assertTrue(newBoard.boardArray[0].empty());
     }
+
+    @Test
+    public void testMoveCol() {
+        board newBoard = new board();
+        card newCard = new card();
+        newBoard.init();
+        newBoard.boardArray[0].push(newCard);
+        newBoard.moveCol(1,0);
+        assertThat(newBoard.boardArray[1].peek(), instanceOf(card.class));
+
+    }
 }

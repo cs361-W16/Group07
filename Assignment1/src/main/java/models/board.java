@@ -27,4 +27,12 @@ public class board {
     public void removeStack(int col){
         boardArray[col].pop();
     }
+
+    public void moveCol(int toCol, int fromCol) {
+        if(boardArray[toCol].isEmpty() && !boardArray[fromCol].isEmpty()) {
+
+            boardArray[toCol].push(boardArray[fromCol].peek());
+            boardArray[fromCol].pop();
+        }
+    }
 }
